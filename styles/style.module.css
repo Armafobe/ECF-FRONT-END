@@ -32,6 +32,10 @@
   background-image: url("../public/pictures/Charles Cantin.jpg");
 }
 
+.logo {
+  border-radius: 15px;
+}
+
 .gallery {
   background-image: url("../public/pictures/Filter Background.jpg");
 }
@@ -80,19 +84,6 @@
           box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5), 5px -5px 10px rgba(0, 0, 0, 0.5);
 }
 
-/*.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  text-align: center;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  background-color: hsla(185, 23%, 66%, 0.369);
-}*/
 .filter {
   position: fixed;
   top: 12%;
@@ -131,7 +122,7 @@ label.formControl::after {
 
 .pictures_holder {
   position: relative;
-  top: 30px;
+  top: 5%;
   width: 55%;
   height: 65%;
   background-color: rgba(28, 26, 23, 0.6);
@@ -149,6 +140,12 @@ label.formControl::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.cancel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gridContainer {
@@ -187,15 +184,6 @@ label.formControl::after {
           animation: content-trigger 1s ease-in 0.1s both;
 }
 
-/*.image_price {
-  width: 15%;
-  min-height: 50%;
-  padding: 0;
-  border: double 6px black;
-  border-radius: 5px;
-  background-position: center;
-  background-size: contain;
-}*/
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -203,6 +191,7 @@ label.formControl::after {
   height: 50%;
   position: relative;
   border-radius: 5px;
+  padding: 7px;
   top: 100%;
   opacity: 0%;
   -webkit-box-orient: vertical;
@@ -226,19 +215,50 @@ label.formControl::after {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 25px;
+  margin: 25px 25px 0 25px;
+}
+
+.form_footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 2%;
+}
+
+.contactSubmit {
+  position: relative;
+  width: 10%;
+  -webkit-transform: translate(80%, -140%);
+          transform: translate(80%, -140%);
 }
 
 #contact_form {
   background-color: rgba(0, 0, 0, 0.5);
   height: 75vh;
+  width: 50%;
   border-radius: 10px;
   color: white;
+  overflow: hidden scroll;
 }
 
 #phone {
   font-size: 1.2em;
-  margin: 5px;
   text-decoration: underline;
   color: white;
 }
@@ -270,6 +290,28 @@ label.formControl::after {
 @media screen and (max-width: 576px) {
   .maintitle {
     font-size: 2rem;
+  }
+  #contact_form {
+    width: 95%;
+    overflow: hidden scroll;
+  }
+  .contactSubmit {
+    width: 40%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 993px) {
+  .contactSubmit {
+    width: 20%;
+    -webkit-transform: translate(-10%);
+            transform: translate(-10%);
+    margin-top: 10px;
+  }
+  #contact_form {
+    width: 80%;
   }
 }
 
@@ -320,20 +362,20 @@ label.formControl::after {
     top: 0%;
     left: 100%;
     height: 100%;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     overflow: scroll;
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 993px) {
+@media screen and (min-width: 768px) and (max-width: 993px) {
   .maintitle {
     font-size: 4rem;
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .filter nav ul {
     margin: 0;
   }
@@ -347,6 +389,12 @@ label.formControl::after {
   .filter nav ul {
     margin: 5px 5% 0 0;
     font-size: .8rem;
+  }
+  .filterNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 3rem;
   }
   .pictures_holder {
     width: 85%;
@@ -370,6 +418,9 @@ label.formControl::after {
   .gridContainer > div:hover {
     -webkit-transform: none;
             transform: none;
+  }
+  #contact_form {
+    width: 75%;
   }
 }
 /*# sourceMappingURL=style.module.css.map */

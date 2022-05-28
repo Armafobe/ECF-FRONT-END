@@ -3,4 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
+
+module.exports = {
+  images: {
+    deviceSizes: [320, 420, 768, 1024, 1200],
+    loader: 'default',
+    domains: ["res.cloudinary.com"],
+  }
+}

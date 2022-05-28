@@ -9,8 +9,8 @@ import styles from '../styles/style.module.css'
 export default function Gallery({ res, res2 }) {  
   const [targetCategory, setTargetCategory] = useState("");
 
-  let filter = [];
-
+  //let filter = [];
+  
   return(
     <main className={`${styles.container} ${styles.gallery}`}>
       {/* NAVBAR */}
@@ -21,15 +21,15 @@ export default function Gallery({ res, res2 }) {
       {/* GALLERY FILTER - MOBILE COLLAPSIBLE */}
       <div className={`${styles.filter}`}>
         <div className="container-fluid">
-          <nav className="navbar navbar-expand-lg">
-            <button className="navbar-toggler text-white" 
+          <nav className={`navbar navbar-expand-lg ${styles.filterNav}`}>
+            <button className={`navbar-toggler text-white ${styles.filterButton}`}
               type="button" 
               data-bs-toggle="collapse" 
               data-bs-target="#filterContent" 
               aria-controls="filterContent" 
               aria-expanded="false" 
               aria-label="Toggle navigation">
-              <span>Filtres</span>
+              <span className="align-self-center">Filtres</span>
               <i className="bi bi-list fs-1"/>
             </button>
           
@@ -39,21 +39,24 @@ export default function Gallery({ res, res2 }) {
                   {res2.data.map((category) => (
                     <>
                     <label key={category.id} className={styles.formControl}>
-                      <input 
-                      type="checkbox" 
-                      name="checkbox"
+                      <input
+                      type="radio"
+                      name="radio"
                       id={category.attributes.name}
                       value={category.attributes.name}
-                      onClick={(e) => setTargetCategory(e.target.value)}
+                      checked={targetCategory === category.attributes.name}
+                      onChange={(e) => setTargetCategory(e.target.value)}
                       />
                       {category.attributes.name}
                     </label>
                     </>
                   ))}
+                  <div className={styles.cancel}>
+                    {targetCategory && <h5 onClick={() => setTargetCategory("")}>Tout afficher</h5>}
+                  </div>
                 </ul>
               </form>
             </div>
-
           </nav>
         </div>
       </div>
@@ -61,7 +64,7 @@ export default function Gallery({ res, res2 }) {
       {/* GALLERY CONTENT */}
       <div className={`${styles.pictures_holder}`}>
         <div className={`${styles.pictures}`}>
-          {res.data.filter((photo) => photo.attributes.category.data.attributes.name.includes(filter)).map((photo) => (
+          {res.data.filter((photo) => photo.attributes.category.data.attributes.name.includes(targetCategory)).map((photo) => (
             <div key={res.id}>
               <img
               src={`http://localhost:1337` + photo.attributes.img.data[0].attributes.formats.small.url}

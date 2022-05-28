@@ -10,7 +10,7 @@ export default function Contact() {
         <Nav />
       </div>
 
-      <div className="container-fluid row col-12 col-md-6">
+      <div className={`container-fluid ${styles.contact_holder}`}>
         <form
           id={styles.contact_form}
           action='https://formspree.io/f/mayvlzyo'
@@ -34,13 +34,20 @@ export default function Contact() {
 
           <div className={styles.form_item} style={{ flexDirection: 'column' }}>
             <label htmlFor="message" style={{marginBottom: 15 + 'px'}}>Votre message</label>
-            <textarea name="message" id="message" cols="40" rows="10" placeholder="Écrivez votre message" minLength="100"></textarea>
+            <textarea name="message" id="message" rows="10" placeholder="Écrivez votre message" minLength="100"></textarea>
+            <button className={styles.contactSubmit} type="submit">Envoyer</button>
           </div>
-          <button type="submit">Envoyer</button>
 
-          <hr/>
-
-          <h3>Ou <a href="tel:0123456789" id={styles.phone}>01.23.45.67.89</a></h3>
+          <div className={styles.form_footer}>
+            <Image
+            src={'/../public/pictures/Logo.jpg'}
+            className={styles.logo}
+            width={140}
+            height={140}
+            />
+            <h3><a href="tel:0123456789" id={styles.phone}>01.23.45.67.89</a></h3>
+          </div>
+          <h4>Tout le contenu de ce site est purement imaginatif et lié à mes études de développement web. Merci pour votre compréhension.</h4>
         </form>
       </div>
     </main>

@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/style.module.css'
 
+
 export default function Nav() {
   return(
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <button className="navbar-toggler text-white" 
+        <button className="navbar-toggler text-black" 
           id="menu_btn"
           type="button" 
           data-bs-toggle="collapse" 
@@ -19,10 +20,12 @@ export default function Nav() {
         </button>
         <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul className="nav navbar-nav">
+            <li><i className="bi bi-facebook" onClick={() => alert('Prochainement !')}></i></li>
             <li><a href="\">Accueil</a></li>
             <li><a href="gallery">Galerie</a></li>
             <li><a href="prices">Tarifs</a></li>
             <li><a href="contact">Contact</a></li>
+            <li><i className="bi bi-instagram" onClick={() => alert('Prochainement !')}></i></li>
           </ul>
         </div>
       </div>
