@@ -44,6 +44,7 @@ export default function Contact() {
             className={styles.logo}
             width={140}
             height={140}
+            alt="Logo"
             />
             <h3><a href="tel:0123456789" id={styles.phone}>01.23.45.67.89</a></h3>
           </div>
