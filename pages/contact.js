@@ -39,7 +39,7 @@ export default function Contact() {
           </div>
 
           <div className={styles.form_footer}>
-            <Image
+            <img
             src='../public/pictures/Logo.jpg'
             className={styles.logo}
             width={140}
