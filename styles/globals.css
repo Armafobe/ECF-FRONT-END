@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Quicksand';
-  src: url('../fonts/Quicksand-Bold.ttf'), url('../fonts/Quicksand-Light.ttf'), url('../fonts/Quicksand-Regular.ttf');
-}
-
 * {
   box-sizing: border-box;
 }

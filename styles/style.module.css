@@ -85,7 +85,7 @@
 }
 
 .filter {
-  position: fixed;
+  position: absolute;
   top: 12%;
   z-index: 1;
 }
