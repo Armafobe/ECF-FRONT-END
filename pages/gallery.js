@@ -67,7 +67,7 @@ export default function Gallery({ res, res2 }) {
           {res.data.filter((photo) => photo.attributes.category.data.attributes.name.includes(targetCategory)).map((photo) => (
             <div key={res.id}>
               <img
-              src={`http://localhost:1337` + photo.attributes.img.data[0].attributes.formats.small.url}
+              src={`https://ccantinphotographe.herokuapp.com` + photo.attributes.img.data[0].attributes.formats.small.url}
               alt={photo.attributes.img.data[0].attributes.formats.small.name}
               />
               <p className="text-white text-center">{photo.attributes.name}</p>
@@ -78,7 +78,6 @@ export default function Gallery({ res, res2 }) {
     </main>
   )
 }
-
 
 export async function getStaticProps() {
   try {
