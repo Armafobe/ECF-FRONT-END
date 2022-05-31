@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Nav from '../components/nav'
 import styles from '../styles/style.module.css'
+import Logo from '../public/pictures/Logo.jpg'
 
 export default function Contact() {
   return(
@@ -39,8 +40,8 @@ export default function Contact() {
           </div>
 
           <div className={styles.form_footer}>
-            <img
-            src='../public/pictures/Logo.jpg'
+            <Image
+            src={Logo}
             className={styles.logo}
             width={140}
             height={140}
