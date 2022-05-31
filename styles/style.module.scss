@@ -3,6 +3,11 @@
   src: url('../fonts/Tangerine-Bold.ttf'), url('../fonts/Tangerine-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../fonts/Quicksand-Bold.ttf'), url('../fonts/Quicksand-Light.ttf'), url('../fonts/Quicksand-Regular.ttf');
+}
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
 .container {
