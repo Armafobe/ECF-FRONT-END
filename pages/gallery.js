@@ -82,8 +82,8 @@ export default function Gallery({ res, res2 }) {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch("http://localhost:1337/api/photos?populate=*").then((res) => res.json());
-    const res2 = await fetch("http://localhost:1337/api/categories?populate=*").then((res2) => res2.json());
+    const res = await fetch("https://ccantinphotographe.herokuapp.com/api/photos?populate=*").then((res) => res.json());
+    const res2 = await fetch("https://ccantinphotographe.herokuapp.com/api/categories?populate=*").then((res2) => res2.json());
     
     return {
       props: { res, res2 }
