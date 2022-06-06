@@ -1,6 +1,4 @@
-import Head from 'next/head'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Nav from '../components/nav'
 import styles from '../styles/style.module.css'
